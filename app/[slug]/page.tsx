@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react"
 import { getFirestore, collection, getDocs, query, where, doc, addDoc, updateDoc } from 'firebase/firestore'
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -32,7 +31,6 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
   const [pageId, setPageId] = useState<string>('')
   const [slug, setSlug] = useState<string>('')
   const [content, setContent] = useState('')
-  const divRef = useRef(null);
 
   const getPad = async () => {
     const params = await props.params
